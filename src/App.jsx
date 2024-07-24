@@ -1,3 +1,6 @@
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import Curriculum from "./components/Main"
 
 
 function App() {
@@ -5,8 +8,9 @@ function App() {
 
   return (
     <>
-     
-        
+     <Header />
+     <Curriculum />
+     <Footer />   
     </>
   )
 }
