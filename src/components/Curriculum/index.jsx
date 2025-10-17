@@ -1,4 +1,4 @@
-import img from "../../assets/img1.png";
+import img from "../../../public/img1.png";
 import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
 import 'aos/dist/aos.css';
 import AOS from 'aos';

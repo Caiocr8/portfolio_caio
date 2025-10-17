@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "porfolio-caio"
-  }
+    "default": "portfolio-caio",
+    "curriculo-caio": "curriculo-caio"
+  },
+  "targets": {},
+  "etags": {}
 }
