@@ -2,14 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Scrollbar personalizado para o tema dark do site */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22d3ee 0%, #06b6d4 100%);
+  border-radius: 10px;
+  border: 2px solid #1C1C1C;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #06b6d4 0%, #0891b2 100%);
+  border: 2px solid #2B2B2B;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+
+::-webkit-scrollbar-track {
+  background: #1C1C1C;
+  border-radius: 10px;
+}
+
+
 :root {
   font-family: Montserrat;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #F4F4F4;
+  background-color: #1C1C1C;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,3 +42,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #22d3ee #1C1C1C;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

@@ -3,14 +3,14 @@ import ProjectCard from '../ProjectCard';
 
 const projects = [
     {
-        title: "Nome do Projeto",
-        description: "Breve descrição do projeto, tecnologias usadas e impacto.",
-        link: "https://github.com/Caiocr8/seu-projeto",
+        title: "Controle Financeiro",
+        description: "Um controlador financeiro para colocar entrada e saida de dinheiro feito em React.",
+        link: "https://github.com/Caiocr8/controle-financeiro",
     },
     {
-        title: "Outro Projeto",
-        description: "Descrição do projeto, tecnologias e resultados alcançados.",
-        link: "https://github.com/Caiocr8/outro-projeto",
+        title: "Sistema de Pedidos",
+        description: "Um sistema de pedidos para uma lanchonete feito em React com nodejs.",
+        link: "https://github.com/Caiocr8/sistema-pedidos",
     }
 ]
 
