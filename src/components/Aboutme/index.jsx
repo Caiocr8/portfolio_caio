@@ -1,86 +1,177 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { FaRocket, FaDownload, FaCode, FaLaptopCode, FaRegLightbulb } from 'react-icons/fa';
 
 const AboutMe = () => {
+    // Configuração de animação padrão para reutilizar
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    };
+
     return (
-        <section className="mb-8 space-y-16">
+        <section className="mb-8 space-y-20">
             {/* Apresentação */}
-            <div data-aos="fade-up" data-aos-duration="800">
-                <h2 className="text-2xl text-white font-bold mb-2">Desenvolver experiências, não só interfaces</h2>
-                <p className="text-gray-300 text-lg">
-                    Desenvolver interfaces modernas e intuitivas não é só sobre código — é sobre criar experiências.<br />
-                    Sou <span className="font-semibold text-cyan-400">Caio Andrade</span>, Desenvolvedor Front-End com sólida experiência em <span className="font-semibold">React.js</span>, <span className="font-semibold">JavaScript</span> e <span className="font-semibold">Flutter</span>.<br />
-                    Ao longo da minha trajetória, atuei em diversos projetos web e mobile, sempre com foco em performance, responsividade e uma excelente experiência do usuário.
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
+                <div className="flex items-center gap-3 mb-4">
+                    <FaCode className="text-3xl text-cyan-400" />
+                    <h2 className="text-3xl text-white font-bold tracking-tight">
+                        Código limpo, performance e arquitetura robusta
+                    </h2>
+                </div>
+                <p className="text-gray-300 text-lg leading-relaxed border-l-4 border-cyan-500/20 pl-6 ml-2">
+                    Desenvolver software vai além de escrever linhas de código — é sobre criar soluções escaláveis e sustentáveis.<br /><br />
+                    Sou <span className="font-semibold text-cyan-400">Caio Andrade</span>, Desenvolvedor Full Stack com sólida experiência em <span className="text-white font-medium">React.js</span>, <span className="text-white font-medium">TypeScript</span>, <span className="text-white font-medium">Node.js</span> e mobile com <span className="text-white font-medium">Flutter</span>.<br />
+                    Combino uma forte base em Lógica e Orientação a Objetos com um foco obsessivo em <strong>Clean Code</strong> e testes, garantindo entregas de alta performance e fácil manutenibilidade.
                 </p>
-            </div>
+            </motion.div>
+
             {/* Linha do tempo */}
-            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                <h3 className="text-xl text-cyan-400 font-bold mb-2">Minha Jornada Profissional</h3>
-                <ul className="border-l-2 border-cyan-400 pl-6 space-y-6">
-                    <li>
-                        <span className="font-semibold text-white">2021 - Primeiros projetos:</span>
-                        <p className="text-gray-400">
-                            Iniciei desenvolvendo aplicações web simples, aprendendo HTML, CSS e JavaScript na prática. Descobri o poder de transformar ideias em soluções reais.
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
+                <div className="flex items-center gap-3 mb-6">
+                    <FaLaptopCode className="text-2xl text-cyan-400" />
+                    <h3 className="text-2xl text-white font-bold">Minha Jornada Profissional</h3>
+                </div>
+
+                <div className="relative border-l-2 border-gray-700 ml-3 space-y-10 pl-8 pb-4">
+                    {/* Item 1 */}
+                    <div className="relative">
+                        <span className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-[#121212] bg-cyan-500 shadow-glow-cyan"></span>
+                        <span className="text-sm text-cyan-400 font-mono mb-1 block">2021</span>
+                        <h4 className="font-bold text-white text-lg">O início no Back-end</h4>
+                        <p className="text-gray-400 mt-2">
+                            Atuei na <strong>AcadeOne Softwares</strong> otimizando sistemas legados e desenvolvendo novas funcionalidades em PHP e JavaScript. Foi onde consolidei minha base em regras de negócio e desenvolvimento web.
                         </p>
-                    </li>
-                    <li>
-                        <span className="font-semibold text-white">2022 - React e Mobile:</span>
-                        <p className="text-gray-400">
-                            Aprofundei em <span className="font-semibold text-cyan-400">React.js</span> e comecei a criar apps mobile com <span className="font-semibold text-cyan-400">Flutter</span>, focando em performance, UX e acessibilidade.
+                    </div>
+
+                    {/* Item 2 */}
+                    <div className="relative">
+                        <span className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-[#121212] bg-blue-500"></span>
+                        <span className="text-sm text-blue-400 font-mono mb-1 block">2021/2022</span>
+                        <h4 className="font-bold text-white text-lg">Experiência Internacional</h4>
+                        <p className="text-gray-400 mt-2">
+                            Como Junior Developer na <strong>Me At (Israel)</strong>, trabalhei remotamente com foco total em Front-end usando <span className="text-cyan-400">React.js</span>. Vivenciei um ambiente de alta performance, com gestão rigorosa de tempo e entregas ágeis (Scrum).
                         </p>
-                    </li>
-                    <li>
-                        <span className="font-semibold text-white">2023 - Projetos reais e times ágeis:</span>
-                        <p className="text-gray-400">
-                            Participei de projetos para empresas, integrando APIs, usando <span className="font-semibold">Firebase</span> e aplicando Scrum para entregas contínuas. Aprendi a importância do trabalho em equipe e da entrega de valor constante.
+                    </div>
+
+                    {/* Item 3 */}
+                    <div className="relative">
+                        <span className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-[#121212] bg-purple-500"></span>
+                        <span className="text-sm text-purple-400 font-mono mb-1 block">2022</span>
+                        <h4 className="font-bold text-white text-lg">Ciclo completo de desenvolvimento</h4>
+                        <p className="text-gray-400 mt-2">
+                            Na <strong>Online OS</strong>, participei da concepção à entrega de softwares, resolvendo problemas técnicos complexos e focando na usabilidade e nas necessidades críticas dos stakeholders.
                         </p>
-                    </li>
-                    <li>
-                        <span className="font-semibold text-white">2024 - Soluções escaláveis e inovação:</span>
-                        <p className="text-gray-400">
-                            Desenvolvi sistemas robustos, implementei design systems, foquei em acessibilidade e busquei inovação em cada entrega. 
+                    </div>
+
+                    {/* Item 4 */}
+                    <div className="relative">
+                        <span className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-[#121212] bg-green-500"></span>
+                        <span className="text-sm text-green-400 font-mono mb-1 block">2024/2025</span>
+                        <h4 className="font-bold text-white text-lg">Mobile e Arquitetura</h4>
+                        <p className="text-gray-400 mt-2">
+                            Na <strong>Máxima Tecnologia</strong>, liderei o desenvolvimento de aplicações mobile integradas a APIs REST e Firebase. Apliquei padrões modernos de arquitetura para garantir a escalabilidade dos projetos.
                         </p>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+
+                    {/* Item 5 - Atual */}
+                    <div className="relative">
+                        <span className="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-[#121212] bg-yellow-400 animate-pulse"></span>
+                        <span className="text-sm text-yellow-400 font-mono mb-1 block">2026 - Atual</span>
+                        <h4 className="font-bold text-white text-lg">Especialização Contínua</h4>
+                        <p className="text-gray-400 mt-2">
+                            Atualmente pós-graduando em <strong>Arquitetura de Software</strong> e <strong>Desenvolvimento Full Stack & Cloud</strong>, buscando elevar o nível técnico das soluções que entrego.
+                        </p>
+                    </div>
+                </div>
+            </motion.div>
+
             {/* Conquistas e diferenciais */}
-            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
-                <h3 className="text-xl text-cyan-400 font-bold mb-2">O que me destaca</h3>
-                <ul className="list-disc list-inside mt-2 mb-2 text-base text-gray-400">
-                    <li>✅ Criação de aplicações robustas com Flutter e Firebase</li>
-                    <li>✅ Boas práticas com React.js e componentização eficiente</li>
-                    <li>✅ Atuação em times ágeis, aplicando Scrum e entregando valor contínuo</li>
-                    <li>✅ Foco em acessibilidade, design system e interfaces responsivas</li>
-                </ul>
-            </div>
-            {/* Como soluciono problemas */}
-            <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
-                <h3 className="text-xl text-cyan-400 font-bold mb-2">Como soluciono problemas</h3>
-                <p className="text-gray-300 text-lg">
-                    Meu processo começa entendendo o desafio a fundo, pesquisando referências e propondo soluções criativas e eficientes.<br />
-                    Utilizo ferramentas como <span className="font-semibold">React DevTools</span>, <span className="font-semibold">Chrome DevTools</span> e <span className="font-semibold">Figma</span> para prototipar, testar e otimizar cada detalhe.
-                </p>
-                <ul className="list-disc list-inside mt-2 mb-2 text-base text-gray-400">
-                    <li>Identifico gargalos de performance e aplico otimizações</li>
-                    <li>Faço integração de APIs REST e Firebase com segurança</li>
-                    <li>Trabalho com componentização e reuso de código</li>
-                    <li>Priorizo acessibilidade e responsividade em todas as telas</li>
-                </ul>
-            </div>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="grid md:grid-cols-2 gap-8"
+            >
+                <div>
+                    <div className="flex items-center gap-2 mb-4">
+                        <FaRocket className="text-xl text-cyan-400" />
+                        <h3 className="text-xl text-white font-bold">O que me destaca</h3>
+                    </div>
+                    <ul className="space-y-3">
+                        {['Visão Full Stack: domínio de TypeScript, Node.js e React.js',
+                            'Experiência internacional e atuação em times ágeis (Scrum)',
+                            'Foco em Clean Code, Testes Automatizados e Padrões',
+                            'Capacidade de adaptação a diferentes stacks (PHP, C#, Java)'
+                        ].map((item, index) => (
+                            <li key={index} className="flex items-start gap-3 text-gray-400 bg-[#1E1E1E] p-3 rounded-lg border border-gray-800 hover:border-cyan-500/30 transition-colors">
+                                <span className="text-green-400 mt-1">✓</span>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* Como soluciono problemas */}
+                <div>
+                    <div className="flex items-center gap-2 mb-4">
+                        <FaRegLightbulb className="text-xl text-yellow-400" />
+                        <h3 className="text-xl text-white font-bold">Como soluciono problemas</h3>
+                    </div>
+                    <p className="text-gray-400 mb-4 text-sm">
+                        Meu processo une técnica e análise. Antes de codar, entendo o problema a fundo para propor a arquitetura mais eficiente.
+                    </p>
+                    <ul className="space-y-3">
+                        {['Otimização de queries e performance',
+                            'Integração segura (REST/Firebase/Cloud)',
+                            'Componentização visando reuso',
+                            'Design Systems fiéis e responsivos'
+                        ].map((item, index) => (
+                            <li key={index} className="flex items-start gap-3 text-gray-400 bg-[#1E1E1E] p-3 rounded-lg border border-gray-800 hover:border-yellow-500/30 transition-colors">
+                                <span className="text-yellow-400 mt-1">⚡</span>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </motion.div>
+
             {/* Interesses e chamada para ação */}
-            <div data-aos="fade-up" data-aos-delay="800" data-aos-duration="800" className="flex flex-col items-start bg-[#232323] p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl text-cyan-400 font-bold mb-2">Vamos conversar?</h3>
-                <p className="text-gray-300 text-lg mb-4">
-                    🚀 Busco novas oportunidades para continuar evoluindo tecnicamente, especialmente em projetos que valorizem boas práticas, código limpo e inovação constante.<br />
-                    <span className="font-semibold text-cyan-400">Interesses:</span> Front-end moderno, mobile, design system, acessibilidade, UI/UX, metodologias ágeis (Scrum).
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1E1E1E] to-[#121212] border border-gray-800 p-8 shadow-2xl group"
+            >
+                <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-cyan-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition duration-500"></div>
+
+                <h3 className="text-2xl text-white font-bold mb-4">Vamos construir algo incrível?</h3>
+                <p className="text-gray-300 text-lg mb-6 relative z-10">
+                    🚀 Busco projetos desafiadores que exijam qualidade técnica e boas práticas. Estou pronto para aplicar meu conhecimento em Arquitetura de Software e Full Stack para gerar valor real.<br /><br />
+                    <span className="text-cyan-400 font-mono text-sm bg-cyan-900/20 px-2 py-1 rounded">Stack: React.js • TypeScript • Node.js • Flutter • SQL • Firebase</span>
                 </p>
+
                 <a
                     href="/Curriculo_Caio_Andrade.pdf"
                     download
-                    className="bg-cyan-500 text-white px-8 py-3 rounded shadow hover:bg-cyan-600 transition font-bold text-lg"
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white px-8 py-4 rounded-xl shadow-lg shadow-cyan-900/20 hover:shadow-cyan-500/40 transition-all transform hover:-translate-y-1 font-bold text-lg"
                 >
-                    Baixar Currículo
+                    <FaDownload />
+                    Baixar Currículo Completo
                 </a>
-            </div>
+            </motion.div>
         </section>
     );
 };
